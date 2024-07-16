@@ -5,6 +5,15 @@
 -- Set up custom filetypes
 require("leap").add_default_mappings()
 
+vim.o.clipboard = "unnamedplus"
+
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg "", "\n"),
+    vim.fn.getregtype "",
+  }
+end
+
 vim.g.clipboard = {
   name = "OSC 52",
   copy = {
@@ -12,8 +21,8 @@ vim.g.clipboard = {
     ["*"] = require("vim.ui.clipboard.osc52").copy "*",
   },
   paste = {
-    ["+"] = require("vim.ui.clipboard.osc52").paste "+",
-    ["*"] = require("vim.ui.clipboard.osc52").paste "*",
+    ["+"] = paste,
+    ["*"] = paste,
   },
 }
 
