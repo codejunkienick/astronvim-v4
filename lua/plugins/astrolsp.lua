@@ -24,6 +24,10 @@
 ---@type LazySpec
 return {
 
+  {
+    "yioneko/nvim-vtsls",
+    config = function() require("lspconfig.configs").vtsls = require("vtsls").lspconfig end,
+  },
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
