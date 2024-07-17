@@ -42,7 +42,7 @@ return {
         require("onedark").setup {
           style = "dark",
         }
-        require("onedark").load()
+        -- require("onedark").load()
       end,
     },
     -- {
@@ -61,21 +61,6 @@ return {
     --     return config
     --   end,
     -- },
-    {
-      "nvim-telescope/telescope.nvim",
-      opts = function(_, config)
-        local telescope_actions = require "telescope.actions"
-        config.pickers = {
-          lsp_definitions = {
-            file_ignore_patterns = { "react/index.d.ts" },
-          },
-        }
-        config.defaults.mappings.n["<C-q>"] = telescope_actions.close
-        config.defaults.mappings.n["d"] = telescope_actions.delete_buffer
-        config.defaults.mappings.i["<C-q>"] = telescope_actions.close
-        return config
-      end,
-    },
     {
       "nvim-neo-tree/neo-tree.nvim",
       opts = function(_, config)

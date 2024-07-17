@@ -3,46 +3,27 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+-- local function disable_formatting(client)
+--   client.resolved_capabilities.document_formatting = false
+--   client.resolved_capabilities.document_range_formatting = false
+-- end
+--
+-- local function filter(arr, fn)
+--   if type(arr) ~= "table" then return arr end
+--
+--   local filtered = {}
+--   for k, v in pairs(arr) do
+--     if fn(v, k, arr) then table.insert(filtered, v) end
+--   end
+--
+--   return filtered
+-- end
+--
+-- local function filterReactDTS(value) return string.match(value.targetUri, "react%") == nil end
+
 ---@type LazySpec
 return {
 
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>xX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
-    },
-  },
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
@@ -90,6 +71,30 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      --
+      -- tsserver = function(opts)
+      --   opts.root_dir = require("lspconfig").util.find_git_ancestor
+      --   opts.handlers = {
+      --     ["textDocument/definition"] = function(err, result, method, ...)
+      --       if vim.tbl_islist(result) and #result > 2 then
+      --         local filtered_result = filter(result, filterReactDTS)
+      --         return vim.lsp.handlers["textDocument/definition"](err, filtered_result, method, ...)
+      --       end
+      --
+      --       vim.lsp.handlers["textDocument/definition"](err, result, method, ...)
+      --     end,
+      --   }
+      --   return opts
+      -- end,
+      -- eslint = function(opts)
+      --   opts.on_attach = disable_formatting
+      --   opts.settings = {
+      --     workingDirectories = {
+      --       { mode = "location" },
+      --     },
+      --   }
+      --   opts.root_dir = require("lspconfig").util.find_git_ancestor
+      -- end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {

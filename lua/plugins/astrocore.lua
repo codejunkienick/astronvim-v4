@@ -25,7 +25,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
+        relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
@@ -45,6 +45,10 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
+        ["<Leader>fy"] = {
+          function() require("telescope").extensions.yank_history.yank_history() end,
+          desc = "Yanky History",
+        },
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
