@@ -9,15 +9,6 @@ return {
     config = function() require("better_escape").setup() end,
   },
   {
-    "jcdickinson/codeium.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function() require("codeium").setup {} end,
-  },
-  {
     "nvim-focus/focus.nvim",
     lazy = false,
     config = function()

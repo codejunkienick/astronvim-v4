@@ -43,6 +43,12 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+        -- ["p"] = { "<Plug>(YankyPutAfter)" },
+        -- ["P"] = { "<Plug>(YankyPutBefore)" },
+        -- ["gp"] = { "<Plug>(YankyGPutAfter)" },
+        -- ["gP"] = { "<Plug>(YankyGPutBefore)" },
+        -- ["<c-p>"] = { "<Plug>(YankyPreviousEntry)" },
+        -- ["<c-n>"] = { "<Plug>(YankyNextEntry)" },
 
         -- navigate buffer tabs
         ["<Leader>fy"] = {
