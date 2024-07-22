@@ -5,11 +5,22 @@
 
 ---@type LazySpec
 return {
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "rebelot/kanagawa.nvim" },
+  {
+    "olimorris/onedarkpro.nvim",
+    opts = {
+      options = {
+        highlight_inactive_windows = true,
+      },
+    },
+    priority = 1000, -- Ensure it loads first
+  },
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "astrodark",
+    colorscheme = "onedark",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
