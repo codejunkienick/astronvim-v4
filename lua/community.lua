@@ -8,5 +8,6 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  -- { import = "astrocommunity.test.neotest" }, copied to neotest.lua for reconfig
   -- import/override with your plugins folder
 }
