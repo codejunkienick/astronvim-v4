@@ -9,8 +9,6 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "vtsls",
-        "eslint_d",
         -- add more arguments for adding more language servers
       },
     },
