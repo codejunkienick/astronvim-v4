@@ -13,13 +13,42 @@ return {
     },
   },
   {
-    "jcdickinson/codeium.nvim",
+    "Exafunction/codeium.nvim",
     lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
+    cmd = "Codeium",
+    opts = {
+      enable_chat = true,
     },
-    config = function() require("codeium").setup {} end,
+    dependencies = {
+      {
+        "AstroNvim/astroui",
+        ---@type AstroUIOpts
+        opts = {
+          icons = {
+            Codeium = "",
+          },
+        },
+      },
+      {
+        "AstroNvim/astrocore",
+        ---@param opts AstroCoreOpts
+        opts = function(_, opts)
+          return require("astrocore").extend_tbl(opts, {
+            mappings = {
+              n = {
+                ["<Leader>;"] = {
+                  desc = require("astroui").get_icon("Codeium", 1, true) .. "Codeium",
+                },
+                ["<Leader>;o"] = {
+                  desc = "Open Chat",
+                  function() vim.cmd "Codeium Chat" end,
+                },
+              },
+            },
+          })
+        end,
+      },
+    },
   },
   { -- override nvim-cmp plugin
     "hrsh7th/nvim-cmp",
@@ -38,7 +67,7 @@ return {
         { name = "cmp_yanky", priority = 650 },
         {
           name = "codeium",
-          priority = 600,
+          priority = 1100,
         },
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },
