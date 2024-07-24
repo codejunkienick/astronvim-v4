@@ -8,6 +8,8 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
-  -- { import = "astrocommunity.test.neotest" }, copied to neotest.lua for reconfig
-  -- import/override with your plugins folder
+  { import = "astrocommunity.debugging.nvim-bqf" },
+  { import = "astrocommunity.comment.ts-comments-nvim" },
+  { import = "astrocommunity.git.git-blame-nvim" },
+  { import = "astrocommunity.git.neogit" },
 }
