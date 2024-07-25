@@ -10,6 +10,11 @@ return {
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.debugging.nvim-bqf" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
-  { import = "astrocommunity.git.git-blame-nvim" },
-  { import = "astrocommunity.git.neogit" },
+  -- { import = "astrocommunity.git.git-blame-nvim" },
+  -- { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.indent.mini-indentscope" },
+  -- { import = "astrocommunity.editing-support.yanky-nvim" },
+  { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.split-and-window.edgy-nvim" },
+  -- { import = "astrocommunity.keybinding.mini-clue" },
 }
