@@ -15,6 +15,9 @@ return {
   { import = "astrocommunity.indent.mini-indentscope" },
   -- { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
+  -- { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.editing-support.nvim-context-vt" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
   -- { import = "astrocommunity.split-and-window.edgy-nvim" },
   -- { import = "astrocommunity.keybinding.mini-clue" },
 }
