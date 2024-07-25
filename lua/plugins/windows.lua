@@ -5,20 +5,19 @@
 return {
   -- == Examples of Adding Plugins ==
   {
-    "max397574/better-escape.nvim",
-    config = function() require("better_escape").setup() end,
+    "nvim-focus/focus.nvim",
+    lazy = false,
+    config = function()
+      require("focus").setup {
+        enable = true,
+        commads = true,
+        autoresize = { minwidth = 15, minheight = 15 },
+        ui = {
+          number = true,
+        },
+      }
+    end,
   },
-  -- Replaced with edgy-nvim
-  -- {
-  --   "nvim-focus/focus.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require("focus").setup {
-  --       enable = true,
-  --       commads = true,
-  --     }
-  --   end,
-  -- },
   {
     "Lilja/zellij.nvim",
     lazy = false,

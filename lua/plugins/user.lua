@@ -13,6 +13,17 @@ return {
     config = function() require("lsp_signature").setup() end,
   },
 
+  {
+    "max397574/better-escape.nvim",
+    config = function() require("better_escape").setup() end,
+  },
+  {
+    "sustech-data/wildfire.nvim",
+    event = "BufEnter",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+  },
+
   -- == Examples of Overriding Plugins ==
 
   -- customize alpha options

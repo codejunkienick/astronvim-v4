@@ -3,15 +3,15 @@
 
 ---@type LazySpec
 return {
-  {
-    "chrisgrieser/cmp_yanky",
-    opt = {
-      -- only suggest items which match the current filetype
-      onlyCurrentFiletype = false,
-      -- only suggest items with a minimum length
-      minLength = 3,
-    },
-  },
+  -- {
+  --   "chrisgrieser/cmp_yanky",
+  --   opt = {
+  --     -- only suggest items which match the current filetype
+  --     onlyCurrentFiletype = false,
+  --     -- only suggest items with a minimum length
+  --     minLength = 3,
+  --   },
+  -- },
   {
     "Exafunction/codeium.nvim",
     lazy = false,
@@ -64,7 +64,7 @@ return {
       opts.sources = cmp.config.sources {
         { name = "nvim_lsp", priority = 1000 },
         { name = "luasnip", priority = 750 },
-        { name = "cmp_yanky", priority = 650 },
+        -- { name = "cmp_yanky", priority = 650 },
         {
           name = "codeium",
           priority = 1100,
