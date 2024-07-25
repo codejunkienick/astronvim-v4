@@ -4,26 +4,8 @@
 ---@type LazySpec
 return {
   {
-    "gbprod/yanky.nvim",
-    opts = {
-      -- storage = "memory",
-      picker = {
-        select = {
-          action = nil, -- nil to use default put action
-        },
-        telescope = {
-          use_default_mappings = true,
-          mappings = nil, -- nil to use default mappings
-        },
-      },
-    },
-  },
-  {
     "nvim-telescope/telescope.nvim",
-    config = function(plugin, opts)
-      require("telescope").setup(opts)
-      require("telescope").load_extension "yank_history"
-    end,
+    config = function(plugin, opts) require("telescope").setup(opts) end,
     opts = function(_, config)
       -- local telescope_actions = require "telescope.actions"
       config.pickers = {
