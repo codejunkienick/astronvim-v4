@@ -18,6 +18,8 @@ return {
   -- { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.editing-support.nvim-context-vt" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.lsp.lsp-lens-nvim" },
+  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   -- { import = "astrocommunity.split-and-window.edgy-nvim" },
   -- { import = "astrocommunity.keybinding.mini-clue" },
 }

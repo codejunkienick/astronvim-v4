@@ -51,6 +51,7 @@ return {
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
+        "prettierd",
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
       },
