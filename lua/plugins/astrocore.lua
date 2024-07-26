@@ -42,8 +42,20 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+
+        ["<Leader>z"] = {
+          function()
+            require("zen-mode").toggle {
+              window = {
+                width = 0.85, -- width will be 85% of the editor width
+              },
+            }
+          end,
+          desc = "Close buffer from tabline",
+        },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {

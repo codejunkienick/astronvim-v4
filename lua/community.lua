@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.motion.leap-nvim" },
   -- { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.editing-support.nvim-context-vt" },
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },

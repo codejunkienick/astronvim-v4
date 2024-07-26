@@ -82,5 +82,6 @@
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" },
-  "zellij.nvim": { "branch": "master", "commit": "99659823e2ee81e4ba5a2579093776ee39a93b15" }
+  "zellij.nvim": { "branch": "master", "commit": "99659823e2ee81e4ba5a2579093776ee39a93b15" },
+  "zen-mode.nvim": { "branch": "main", "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6" }
 }
