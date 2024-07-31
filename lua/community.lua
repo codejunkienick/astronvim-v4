@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.debugging.nvim-bqf" },
+  { import = "astrocommunity.debugging.telescope-dap-nvim" }, -- prob uselsess
   { import = "astrocommunity.comment.ts-comments-nvim" },
   -- { import = "astrocommunity.git.git-blame-nvim" },
   -- { import = "astrocommunity.git.neogit" },
