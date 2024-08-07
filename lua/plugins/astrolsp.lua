@@ -3,24 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
--- local function disable_formatting(client)
---   client.resolved_capabilities.document_formatting = false
---   client.resolved_capabilities.document_range_formatting = false
--- end
---
--- local function filter(arr, fn)
---   if type(arr) ~= "table" then return arr end
---
---   local filtered = {}
---   for k, v in pairs(arr) do
---     if fn(v, k, arr) then table.insert(filtered, v) end
---   end
---
---   return filtered
--- end
---
--- local function filterReactDTS(value) return string.match(value.targetUri, "react%") == nil end
-
 ---@type LazySpec
 return {
 
@@ -35,8 +17,7 @@ return {
     -- Configuration table of features provided by AstroLSP
     features = {
       codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
-      semantic_tokens = true, -- enable/disable semantic token highlighting
+      inlay_hints = false, -- enable/disable inlay hints on start semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
@@ -52,8 +33,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         "prettierd",
-        -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
-        -- "lua_ls",
+        "prettier",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
