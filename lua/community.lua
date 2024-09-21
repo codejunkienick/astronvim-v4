@@ -6,6 +6,8 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" }, -- prob uselsess

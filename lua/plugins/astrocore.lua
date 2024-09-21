@@ -29,7 +29,10 @@ return {
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-        wrap = false, -- sets vim.opt.wrap
+        textwidth = 80,
+        conceallevel = 1,
+        linebreak = true,
+        wrap = true, -- sets vim.opt.wrap
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -50,7 +53,7 @@ return {
           function()
             require("zen-mode").toggle {
               window = {
-                width = 0.85, -- width will be 85% of the editor width
+                width = 120, -- width will be 85% of the editor width
               },
             }
           end,
