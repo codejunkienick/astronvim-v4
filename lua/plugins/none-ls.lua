@@ -24,7 +24,7 @@ return {
       -- require "none-ls.formatting.eslint_d",
       -- require "none-ls.diagnostics.eslint_d",
       -- require "none-ls.code_actions.eslint_d",
-      null_ls.builtins.diagnostics.markdownlint,
+      -- null_ls.builtins.diagnostics.markdownlint,
     })
   end,
 }
