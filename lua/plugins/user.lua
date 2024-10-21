@@ -14,6 +14,18 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      -- setup treesitter with config
+    end,
+    dependencies = {
+      -- NOTE: additional parser
+      { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
+    },
+    build = ":TSUpdate",
+  },
+
+  {
     "max397574/better-escape.nvim",
     config = function() require("better_escape").setup() end,
   },

@@ -3,26 +3,26 @@
 
 ---@type LazySpec
 return {
-  {
-    "nvim-telescope/telescope-frecency.nvim",
-    config = function() require("telescope").load_extension "frecency" end,
-  },
-  {
-    "AstroNvim/astrocore",
-    ---@param opts AstroCoreOpts
-    opts = function(_, opts)
-      return require("astrocore").extend_tbl(opts, {
-        mappings = {
-          n = {
-            ["<Leader>fj"] = {
-              desc = "Frequent Files",
-              function() vim.cmd "Telescope frecency workspace=CWD  previewer=false theme=ivy" end,
-            },
-          },
-        },
-      })
-    end,
-  },
+  --   {
+  --     "nvim-telescope/telescope-frecency.nvim",
+  --     config = function() require("telescope").load_extension "frecency" end,
+  --   },
+  --   {
+  --     "AstroNvim/astrocore",
+  --     ---@param opts AstroCoreOpts
+  --     opts = function(_, opts)
+  --       return require("astrocore").extend_tbl(opts, {
+  --         mappings = {
+  --           n = {
+  --             ["<Leader>fj"] = {
+  --               desc = "Frequent Files",
+  --               function() vim.cmd "Telescope frecency workspace=CWD  previewer=false theme=ivy" end,
+  --             },
+  --           },
+  --         },
+  --       })
+  --     end,
+  --   },
   {
     "nvim-telescope/telescope.nvim",
     config = function(plugin, opts) require("telescope").setup(opts) end,

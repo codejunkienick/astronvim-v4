@@ -8,10 +8,10 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
-  { import = "astrocommunity.debugging.telescope-dap-nvim" }, -- prob uselsess
+  -- { import = "astrocommunity.debugging.telescope-dap-nvim" }, -- prob uselsess
   { import = "astrocommunity.comment.ts-comments-nvim" },
   -- { import = "astrocommunity.git.git-blame-nvim" },
-  { import = "astrocommunity.git.neogit" },
+  -- { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.indent.mini-indentscope" },
   -- { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
@@ -23,6 +23,7 @@ return {
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.file-explorer.oil-nvim" },
+  --
   -- { import = "astrocommunity.split-and-window.edgy-nvim" },
   -- { import = "astrocommunity.keybinding.mini-clue" },
 }
