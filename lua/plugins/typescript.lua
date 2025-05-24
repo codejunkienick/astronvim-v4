@@ -73,7 +73,6 @@ end
 local conform_formatter = function(bufnr) return has_prettier(bufnr) and { "prettierd" } or {} end
 
 return {
-  { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -95,7 +94,9 @@ return {
           {
             event = "BufWritePost",
             desc = "Fix all eslint errors",
-            callback = function() vim.cmd.EslintFixAll() end,
+            callback = function(args)
+              if vim.F.if_nil(vim.b[args.buf].autoformat, vim.g.autoformat, true) then vim.cmd.EslintFixAll() end
+            end,
           },
         },
       },
@@ -103,7 +104,11 @@ return {
       config = {
         vtsls = {
           settings = {
+            autoUseWorkspaceTsdk = false,
             typescript = {
+              tsserver = {
+                maxTsServerMemory = 16980,
+              },
               updateImportsOnFileMove = { enabled = "always" },
               inlayHints = {
                 parameterNames = { enabled = "all" },
@@ -134,6 +139,29 @@ return {
     },
   },
   {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    -- REMOVE THIS once this issue is fixed: https://github.com/yioneko/vtsls/issues/159
+    opts = {
+      routes = {
+        {
+          filter = {
+            event = "notify",
+            find = "Request textDocument",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "notify",
+            find = "vim.tbl_islist is deprecated.",
+          },
+          opts = { skip = true },
+        },
+      },
+    },
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "vtsls", "eslint" })
@@ -146,12 +174,12 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "prettierd" })
       if not opts.handlers then opts.handlers = {} end
 
-      opts.handlers.prettierd = function(source_name, methods)
-        local null_ls = require "null-ls"
-        for _, method in ipairs(methods) do
-          null_ls.register(null_ls.builtins[method][source_name].with { runtime_condition = null_ls_formatter })
-        end
-      end
+      -- opts.handlers.prettierd = function(source_name, methods)
+      --   local null_ls = require "null-ls"
+      --   for _, method in ipairs(methods) do
+      --     null_ls.register(null_ls.builtins[method][source_name].with { runtime_condition = null_ls_formatter })
+      --   end
+      -- end
     end,
   },
   {
