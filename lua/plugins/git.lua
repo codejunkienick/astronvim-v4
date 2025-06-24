@@ -11,9 +11,13 @@ return {
         opts = {
           mappings = {
             n = {
+              ["<Leader>gV"] = {
+                "<cmd>BlameToggle virtual<cr>",
+                desc = "Toggle git blame text",
+              },
               ["<Leader>gB"] = {
-                "<cmd>BlameToggle<cr>",
-                desc = "Toggle git blame",
+                "<cmd>BlameToggle window<cr>",
+                desc = "Toggle git blame window",
               },
             },
           },
