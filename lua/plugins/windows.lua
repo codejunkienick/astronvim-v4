@@ -19,15 +19,6 @@ return {
     end,
   },
   {
-    "Lilja/zellij.nvim",
-    lazy = false,
-    config = function()
-      require("zellij").setup {
-        replaceVimWindowNavigationKeybinds = true,
-      }
-    end,
-  },
-  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, config)
       config.close_if_last_window = false
