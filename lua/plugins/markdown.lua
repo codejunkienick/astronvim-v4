@@ -16,7 +16,7 @@ return {
   },
   opts = {
     preview = {
-      filetypes = { "markdown", "codecompanion" },
+      filetypes = { "markdown", "codecompanion", "Avante" },
       ignore_buftypes = {},
       hybrid_modes = { "n" },
       headings = { shift_width = 0 },
