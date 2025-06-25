@@ -1,4 +1,5 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
+-- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
 ---@type LazySpec
@@ -13,82 +14,34 @@ return {
     config = function() require("lsp_signature").setup() end,
   },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      -- setup treesitter with config
-    end,
-    dependencies = {
-      -- NOTE: additional parser
-      { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
-    },
-    build = ":TSUpdate",
-  },
+  -- == Examples of Overriding Plugins ==
 
+  -- customize dashboard options
   {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    -- REMOVE THIS once this issue is fixed: https://github.com/yioneko/vtsls/issues/159
+    "folke/snacks.nvim",
     opts = {
-      routes = {
-        {
-          filter = {
-            event = "notify",
-            find = "Request textDocument/inlayHint failed",
-          },
-          opts = { skip = true },
-        },
-        {
-          filter = {
-            event = "notify",
-            find = "Request textDocument",
-          },
-          opts = { skip = true },
-        },
-        {
-          filter = {
-            event = "notify",
-            find = "vim.tbl_islist is deprecated.",
-          },
-          opts = { skip = true },
+      dashboard = {
+        preset = {
+          header = table.concat({
+            " █████  ███████ ████████ ██████   ██████ ",
+            "██   ██ ██         ██    ██   ██ ██    ██",
+            "███████ ███████    ██    ██████  ██    ██",
+            "██   ██      ██    ██    ██   ██ ██    ██",
+            "██   ██ ███████    ██    ██   ██  ██████ ",
+            "",
+            "███    ██ ██    ██ ██ ███    ███",
+            "████   ██ ██    ██ ██ ████  ████",
+            "██ ██  ██ ██    ██ ██ ██ ████ ██",
+            "██  ██ ██  ██  ██  ██ ██  ██  ██",
+            "██   ████   ████   ██ ██      ██",
+          }, "\n"),
         },
       },
     },
   },
-  {
-    "max397574/better-escape.nvim",
-    config = function() require("better_escape").setup() end,
-  },
-  -- {
-  --   "sustech-data/wildfire.nvim",
-  --   event = "BufEnter",
-  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
-  --   opts = {},
-  -- },
 
-  -- == Examples of Overriding Plugins ==
-
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
-  },
+  -- You can disable default plugins as follows:
+  { "max397574/better-escape.nvim", enabled = false },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {

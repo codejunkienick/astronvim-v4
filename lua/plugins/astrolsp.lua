@@ -1,3 +1,5 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -5,19 +7,14 @@
 
 ---@type LazySpec
 return {
-
-  -- Added via community
-  -- {
-  --   "yioneko/nvim-vtsls",
-  --   config = function() require("lspconfig.configs").vtsls = require("vtsls").lspconfig end,
-  -- },
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
       codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start semantic_tokens = true, -- enable/disable semantic token highlighting
+      inlay_hints = false, -- enable/disable inlay hints on start
+      semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
@@ -32,8 +29,8 @@ return {
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
-        "prettierd",
-        "prettier",
+        -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
+        -- "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -57,30 +54,6 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
-      --
-      -- tsserver = function(opts)
-      --   opts.root_dir = require("lspconfig").util.find_git_ancestor
-      --   opts.handlers = {
-      --     ["textDocument/definition"] = function(err, result, method, ...)
-      --       if vim.tbl_islist(result) and #result > 2 then
-      --         local filtered_result = filter(result, filterReactDTS)
-      --         return vim.lsp.handlers["textDocument/definition"](err, filtered_result, method, ...)
-      --       end
-      --
-      --       vim.lsp.handlers["textDocument/definition"](err, result, method, ...)
-      --     end,
-      --   }
-      --   return opts
-      -- end,
-      -- eslint = function(opts)
-      --   opts.on_attach = disable_formatting
-      --   opts.settings = {
-      --     workingDirectories = {
-      --       { mode = "location" },
-      --     },
-      --   }
-      --   opts.root_dir = require("lspconfig").util.find_git_ancestor
-      -- end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {

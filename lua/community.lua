@@ -6,10 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.html-css" },
-
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
@@ -19,11 +16,7 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
+  { import = "astrocommunity.split-and-window.edgy-nvim" },
 
-  -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
-  -- Experiment with it
-  -- { import = "astrocommunity.file-explorer.oil-nvim" },
-  -- { import = "astrocommunity.editing-support.yanky-nvim" },
-  -- { import = "astrocommunity.editing-support.zen-mode-nvim" },
-  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
+  -- import/override with your plugins folder
 }

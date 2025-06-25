@@ -3,9 +3,6 @@
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
-  dependencies = {
-    "nvimtools/none-ls-extras.nvim",
-  },
   opts = function(_, opts)
     -- opts variable is the default configuration table for the setup function call
     local null_ls = require "null-ls"
@@ -19,12 +16,7 @@ return {
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       -- Set a formatter
       null_ls.builtins.formatting.stylua,
-      -- null_ls.builtins.formatting.prettierd,
-      -- null_ls.builtins.formatting.eslint_d,
-      -- require "none-ls.formatting.eslint_d",
-      -- require "none-ls.diagnostics.eslint_d",
-      -- require "none-ls.code_actions.eslint_d",
-      -- null_ls.builtins.diagnostics.markdownlint,
+      -- null_ls.builtins.formatting.prettier,
     })
   end,
 }
