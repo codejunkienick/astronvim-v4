@@ -16,7 +16,6 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
-  { import = "astrocommunity.split-and-window.edgy-nvim" },
 
   -- import/override with your plugins folder
 }
